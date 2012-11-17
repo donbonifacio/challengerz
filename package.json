@@ -12,6 +12,7 @@
 	},
 
 	"dependencies": {
+		"underscore": "1.4.2",
 		"bricks": ">=1.1.2"
 	}
 
