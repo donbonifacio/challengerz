@@ -13,7 +13,7 @@
 				request: request,
 				response: response
 			}
-			var action = controller[actionName]
+			var action = controller[actionName];
 			if( action ) {
 				action(context);
 			}
@@ -36,7 +36,6 @@
 			var compiled = _.template(data);
 			context.response.write(compiled(context));
 			context.response.end();
-    			console.log(data);
     		});
 	}
 	
