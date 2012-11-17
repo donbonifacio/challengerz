@@ -1,0 +1,18 @@
+{
+	"author": "Pedro Santos",
+	"name": "challengerz",
+	"description": "challengerz web server",
+	"version": "0.0.1",
+	"homepage": "http://challengerz.net",
+	"preferGlobal": "false",
+
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:donbonifacio/challengerz.git"
+	},
+
+	"dependencies": {
+		"bricks": ">=1.1.2"
+	}
+
+}
