@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challengerzzzz</title>
+</head>
+<body>
+  <h1>Challengerz</h1>
+  <%= context.body %> 
+
+  <% if( context.midgard.isDevelopment ) { %>
+    <%= context.partial('midgard#trace') %>
+  <% } %>
+</body>
+</html>
