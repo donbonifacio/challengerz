@@ -1,0 +1,9 @@
+body {
+  background:#686868 url(/img/ChallengerBackground.jpg) no-repeat 50% 0;
+}
+
+div.mainPanel {
+  background-color: #FFF;
+  padding:10px;
+}
+
