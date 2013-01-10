@@ -1,16 +1,19 @@
 (function routes() {
 
-  exports.load = function load(midgard) {
+  var _ = require('underscore');
 
-    var _ = require('underscore');
-
+  var localizedRoute = function(midgard, token, endpoint) {
     _.each(midgard.language.supportedLanguages, function prepareLanguage(lang) {
       midgard.route(
-        midgard.language.translate(lang, "url.events.list"), 
-        "events#list", 
+        midgard.language.translate(lang, token), 
+        endpoint,
         {requestLanguage: lang}
       );
     });
+  };
+
+  exports.load = function load(midgard) {
+    localizedRoute(midgard, 'url.events.list', 'events#list');
 
     midgard.routes.static([
       "/css/.+",
