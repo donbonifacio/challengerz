@@ -1,4 +1,7 @@
 {
   "language": "pt",
-  "Home": "Início"
+
+  "Home": "Início",
+
+  "url.events.list": "/provas/.+"
 }

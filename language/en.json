@@ -1,4 +1,7 @@
 {
   "language": "en",
-  "Home": "Home"
+
+  "Home": "Home",
+
+  "url.events.list": "/events/.+"
 }
