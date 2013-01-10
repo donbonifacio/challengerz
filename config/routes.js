@@ -4,7 +4,7 @@
 
     midgard.route("/events/.+", "events#list");
 
-    midgard.routes.staticAccess([
+    midgard.routes.static([
       "/css/.+",
       "/img/.+",
       "/js/.+"
