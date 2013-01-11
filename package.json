@@ -15,7 +15,7 @@
     "underscore": "1.4.2",
     "bricks": ">=1.1.2",
     "midgard.js": ">=0.1.0",
-    "mongoose": "3.5.x"
+    "mongodb": "1.2.x"
   },
 
   "engines": {
