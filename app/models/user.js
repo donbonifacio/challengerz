@@ -16,4 +16,10 @@
 
   };
 
+  exports.findByApiKey = function findByApiKey(collection, apiKey, callback) {
+    collection.findOne({$and: [{apiKey: apiKey},{ apiKey: {$exists:true}} ]}, function(err, user) {
+      callback(err, user);
+    });
+  };
+
 })();	
