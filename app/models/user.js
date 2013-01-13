@@ -3,7 +3,7 @@
   var _ = require('underscore');
   var User = exports;
 
-  User.validate = function(obj, callback) {
+  User.validate = function validate(obj, callback) {
     if(obj._id) {
       obj.updatedAt = Date.now();
     } else {
