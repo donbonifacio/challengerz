@@ -29,8 +29,8 @@
         if(context.currentUser) {
           context.dataHandler(handler);
         }
-        context.render('result');
       }
+      context.render('result');
     }
   };
 
