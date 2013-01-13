@@ -2,6 +2,7 @@
 
   var database = require('../../lib/database.js');
   var User = require('../../app/models/user.js');
+  var EventSource = require('../../app/models/eventSource.js');
   var apiController = exports;
 
   apiController.setup = function setup(context, next) {
@@ -20,8 +21,19 @@
     });
   };
 
-  apiController.createEventSource = function createEventSource(context) {
-    context.render('result');
+  var processApiRequest = function createHandler(method, handler) {
+    return function processApiRequest(context) {
+      if(context.request.method !== method ) {
+        context.apiResult = {success: false, error: 'Expecting ' + method + ' request'};
+      } else {
+        if(context.currentUser) {
+          context.dataHandler(handler);
+        }
+        context.render('result');
+      }
+    }
   };
+
+  apiController.createEventSource = processApiRequest('POST', EventSource.create);
 
 })();
