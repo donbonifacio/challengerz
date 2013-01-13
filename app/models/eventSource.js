@@ -1,6 +1,6 @@
 (function EventSource() {
 
-  exports.create = function createFromContext(context, next) {
+  exports.createFromContext = function createFromContext(context, next) {
     next(context);
   };
 

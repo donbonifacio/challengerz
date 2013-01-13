@@ -34,6 +34,6 @@
     }
   };
 
-  apiController.createEventSource = processApiRequest('POST', EventSource.create);
+  apiController.createEventSource = processApiRequest('POST', EventSource.createFromContext);
 
 })();
