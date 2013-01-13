@@ -27,8 +27,7 @@
         context.httpStatusCode = 400;
         context.apiResult = {success: false, error: 'Expecting ' + method + ' request'};
       } else if(context.currentUser) {
-          context.dataHandler(handler);
-        }
+        context.dataHandler(handler);
       }
       context.render('result');
     }
