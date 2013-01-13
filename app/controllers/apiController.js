@@ -24,9 +24,9 @@
   var processApiRequest = function createHandler(method, handler) {
     return function processApiRequest(context) {
       if(context.request.method !== method ) {
+        context.httpStatusCode = 400;
         context.apiResult = {success: false, error: 'Expecting ' + method + ' request'};
-      } else {
-        if(context.currentUser) {
+      } else if(context.currentUser) {
           context.dataHandler(handler);
         }
       }
