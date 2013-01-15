@@ -4,9 +4,9 @@
 
   var EventSource = exports;
 
-  EventSource.validate = function validate(context, obj, callback) {
+  EventSource.validate = function validate(obj, callback) {
     errors = [];
-    if( !(context.validator.present(obj.slug) && context.validator.string(obj.slug)) ) {
+    if( !(midgard.validator.present(obj.slug) && midgard.validator.string(obj.slug)) ) {
       errors.push({field: 'slug', error:'Must be present' });
     }
     if(obj._id) {
@@ -20,7 +20,7 @@
   EventSource.createFromContext = function createFromContext(context, next) {
     context.apiResult = {};
     var model = JSON.parse(context.request.body);
-    EventSource.validate(context, model, function(valid, errors) {
+    EventSource.validate(model, function(valid, errors) {
       if(valid) {
         context.apiResult.success = true;
         database.openCollection('eventSources', function(err, collection) {
