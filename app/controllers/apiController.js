@@ -9,6 +9,16 @@
     context.httpHeaders['Content-Type'] = 'application/json';
     context.apiResult = { success: '?' };
 
+    if( context.request.method !== 'GET' ) {
+      context.requestModel = context.parseJSONBody();
+      if(!context.requestModel) {
+        context.apiResult.success = false;
+        context.apiResult.error = 'Invalid JSON in request';
+        next(context);
+        return;
+      }
+    }
+
     database.openCollection('users', function(err, collection) {
       User.findByApiKey(collection, context.params.apiKey, function(err, user) {
         context.currentUser = user;

@@ -6,9 +6,10 @@
 
   EventSource.validate = function validate(obj, callback) {
     errors = [];
-    if( !(midgard.validator.present(obj.slug) && midgard.validator.string(obj.slug)) ) {
-      errors.push({field: 'slug', error:'Must be present' });
-    }
+    midgard.validator.string(errors, obj, 'slug');
+    midgard.validator.string(errors, obj, 'name');
+    midgard.validator.string(errors, obj, 'website');
+    midgard.validator.boolean(errors, obj, 'visible');
     if(obj._id) {
       obj.updatedAt = Date.now();
     } else {
@@ -19,7 +20,8 @@
 
   EventSource.createFromContext = function createFromContext(context, next) {
     context.apiResult = {};
-    var model = JSON.parse(context.request.body);
+    var model = context.requestModel;
+    model.owner = context.currentUser.username;
     EventSource.validate(model, function(valid, errors) {
       if(valid) {
         context.apiResult.success = true;
