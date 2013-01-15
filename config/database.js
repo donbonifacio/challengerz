@@ -9,9 +9,13 @@
   };
 
   if(!midgard.isDevelopment) {
+    var conn = process.env.MONGOHQ_URL;
+    if(!conn) {
+      throw new Error('No conn string found for MONGOHQ_URL');
+    }
     dbconfig[midgard.env] = function fetchOutside() {
       return {
-        connectionString: process.env.MONGOHQ_URL
+        connectionString: conn
       };
     };
   }
