@@ -21,6 +21,9 @@
   }
 
   dbconfig.init = function init(midgard) {
+    if(midgard.dbconfig) {
+      return;
+    }
     var func = dbconfig[midgard.env];
     if(!func) {
       throw new Error('No dbcondig for ' + midgard.env);

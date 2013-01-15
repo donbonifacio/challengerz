@@ -1,5 +1,4 @@
 var database = require('../lib/database.js');
-var midgard = require('midgard.js');
 var User = require('../app/models/user.js');
 
 var afterCreate = function afterCreate(err, obj) {
