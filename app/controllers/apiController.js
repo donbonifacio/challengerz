@@ -3,6 +3,7 @@
   var database = require('../../lib/database.js');
   var User = require('../../app/models/user.js');
   var EventSource = require('../../app/models/eventSource.js');
+  var EventTag = require('../../app/models/eventTag.js');
   var apiController = exports;
 
   apiController.setup = function setup(context, next) {
@@ -44,6 +45,7 @@
     }
   };
 
+  apiController.listEventTags = processApiRequest('GET', EventTag.all);
   apiController.createEventSource = processApiRequest('POST', EventSource.createFromContext);
 
 })();

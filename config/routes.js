@@ -15,6 +15,7 @@
   exports.load = function load(midgard) {
 
     midgard.route('/api/create-event-source', 'api#createEventSource');
+    midgard.route('/api/list-event-tags', 'api#listEventTags');
 
     localizedRoute(midgard, 'url.events.list', 'events#list');
 
