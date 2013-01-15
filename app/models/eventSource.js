@@ -30,7 +30,6 @@
           });
         });
       } else {
-        context.httpStatus = ;
         context.apiResult.success = false;
         context.apiResult.errors = errors;
         next(context);
