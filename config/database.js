@@ -20,4 +20,12 @@
     };
   }
 
+  dbconfig.init = function init(midgard) {
+    var func = dbconfig[midgard.env];
+    if(!func) {
+      throw new Error('No dbcondig for ' + midgard.env);
+    }
+    midgard.dbconfig = func();
+  };
+
 })();
