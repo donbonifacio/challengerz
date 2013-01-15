@@ -9,7 +9,7 @@
   };
 
   if(!midgard.isDevelopment) {
-    dbconfig[midgard.env.NODE_ENV] = function fromVars() {
+    dbconfig[midgard.env.NODE_ENV] = function fetchOutside() {
       return {
         connectionString: process.env.MONGOHQ_URL
       };
