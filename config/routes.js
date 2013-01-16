@@ -19,13 +19,13 @@
 
     localizedRoute(midgard, 'url.events.list', 'events#list');
 
-    midgard.route('/', 'home#index');
-
     midgard.routes.static([
       "/css/.+",
       "/img/.+",
       "/js/.+"
     ]);
+
+    midgard.route('/', 'home#index');
   };
 
 })();
