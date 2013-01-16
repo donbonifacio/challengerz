@@ -3,10 +3,12 @@
   var database = require('../../lib/database.js');
 
   var EventSource = exports;
+  var collectionName = 'eventSources';
 
   EventSource.validate = function validate(obj, callback) {
-    errors = [];
+    var errors = [];
     midgard.validator.string(errors, obj, 'slug');
+    midgard.validator.string(errors, obj, 'owner');
     midgard.validator.string(errors, obj, 'name');
     midgard.validator.string(errors, obj, 'website');
     midgard.validator.boolean(errors, obj, 'visible');
@@ -18,6 +20,12 @@
     callback(errors.length == 0, errors);
   };
 
+  EventSource.findBySlug = function findBySlug(slug, callback) {
+    database.openCollection(collectionName, function(err, collection) {
+      collection.findOne({slug: slug}, callback);
+    });
+  };
+
   EventSource.createFromContext = function createFromContext(context, next) {
     context.apiResult = {};
     var model = context.requestModel;
@@ -25,7 +33,7 @@
     EventSource.validate(model, function(valid, errors) {
       if(valid) {
         context.apiResult.success = true;
-        database.openCollection('eventSources', function(err, collection) {
+        database.openCollection(collectionName, function(err, collection) {
           collection.save(model, function(err, result) {
             context.apiResult.eventSource = model;
             next(context);
