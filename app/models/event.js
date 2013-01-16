@@ -7,6 +7,7 @@
 
   Event.validate = function validate(obj, callback) {
     var errors = [];
+    midgard.validator.string(errors, obj, 'slug');
     midgard.validator.string(errors, obj, 'owner');
     midgard.validator.string(errors, obj, 'name');
     midgard.validator.string(errors, obj, 'eventSourceSlug');
