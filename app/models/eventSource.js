@@ -17,7 +17,14 @@
     } else {
       obj.createdAt = Date.now();
     }
-    callback(errors.length == 0, errors);
+    EventSource.findBySlug(obj.slug, function(err, model) {
+      if(err) {
+        errors.push(err);
+      } else if(model) {
+        errors.push('SlugNotAvailable');
+      }
+      callback(errors.length == 0, errors);
+    });
   };
 
   EventSource.findBySlug = function findBySlug(slug, callback) {
