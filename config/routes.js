@@ -25,7 +25,7 @@
       "/js/.+"
     ]);
 
-    midgard.route('/', 'home#index');
+    midgard.route('^/$', 'home#index');
   };
 
 })();
