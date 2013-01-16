@@ -19,7 +19,7 @@
 
     localizedRoute(midgard, 'url.events.list', 'events#list');
 
-    midgard.routes.context = { staticRoot: midgard.isDevelopment ? '/' : '' };
+    midgard.routes.context = { staticRoot: midgard.isDevelopment ? '/' : 'http://donbonifacio.github.com/challengerz/' };
     midgard.routes.static([
       "/css/.+",
       "/img/.+",
