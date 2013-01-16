@@ -19,6 +19,7 @@
 
     localizedRoute(midgard, 'url.events.list', 'events#list');
 
+    midgard.routes.context = { staticRoot: midgard.isDevelopment ? '/' : '' };
     midgard.routes.static([
       "/css/.+",
       "/img/.+",

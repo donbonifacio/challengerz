@@ -9,17 +9,11 @@
   <title>Challengerz</title>
   <meta name="description" content="Provas e eventos desportivos!">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <style>
-    body {
-      padding-top: 60px;
-      padding-bottom: 40px;
-    }
-  </style>
-  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <link rel="stylesheet" href="<%= context.staticRoot %>css/bootstrap.min.css">
+  <link rel="icon" type="image/x-icon" href="<%= context.staticRoot %>img/favicon.ico">
+  <link rel="stylesheet" href="<%= context.staticRoot %>css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="<%= context.staticRoot %>css/main.css">
+  <script src="<%= context.staticRoot %>js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -73,10 +67,10 @@
   <% } %>
 
   <script src="///ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-  <script src="/js/vendor/bootstrap.min.js"></script>
+  <script>window.jQuery || document.write('<script src="<%= context.staticRoot %>js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+  <script src="<%= context.staticRoot %>js/vendor/bootstrap.min.js"></script>
 
-  <script src="/js/main.js"></script>
+  <script src="<%= context.staticRoot %>js/main.js"></script>
 
   <script>
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
