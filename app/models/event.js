@@ -54,7 +54,7 @@
 
   Event.fetchLatest = function fetchLatest(context, next) {
     database.openCollection(collectionName, function(err, collection) {
-      collection.find({}, {}, {$limit:2, $sort:{createdAt:1}}).toArray(function(err, list) {
+      collection.find().limit(10).sort({createdAt:0}).toArray(function(err, list) {
         context.fetchLatest = list;
         next(context);
       });
