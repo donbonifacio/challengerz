@@ -2,6 +2,7 @@
   "language": "en",
 
   "Home": "Home",
+  "event": "event",
 
   "url.events.list": "/events/.+"
 }

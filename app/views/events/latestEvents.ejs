@@ -1,0 +1,5 @@
+<ul>
+<% _.each(context.fetchLatest, function(e) { %>
+  <li><a href='<%= context.eventUrl(e) %>'><%= e.name %></a></li>
+<% }) %>
+</ul>

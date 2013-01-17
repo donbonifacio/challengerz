@@ -2,6 +2,7 @@
   "language": "pt",
 
   "Home": "Início",
+  "event": "prova",
 
   "url.events.list": "/provas/.+"
 }
