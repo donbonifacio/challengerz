@@ -5,5 +5,5 @@
   "event": "event",
 
   "url.events.list": "^/events/.+",
-  "url.event.show": "^/event/.+"
+  "url.event.show": "^/event/(.+)/(.+)/(.+)"
 }
