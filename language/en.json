@@ -4,5 +4,6 @@
   "Home": "Home",
   "event": "event",
 
-  "url.events.list": "/events/.+"
+  "url.events.list": "^/events/.+",
+  "url.event.show": "^/event/.+"
 }

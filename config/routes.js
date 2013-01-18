@@ -19,6 +19,7 @@
     midgard.route('/api/list-event-tags', 'api#listEventTags');
 
     localizedRoute(midgard, 'url.events.list', 'events#list');
+    localizedRoute(midgard, 'url.event.show', 'event#show');
 
     midgard.routes.context = { staticRoot: midgard.isDevelopment ? '/' : 'http://donbonifacio.github.com/challengerz/' };
     midgard.routes.static([

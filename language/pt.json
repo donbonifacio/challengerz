@@ -4,5 +4,6 @@
   "Home": "Início",
   "event": "prova",
 
-  "url.events.list": "/provas/.+"
+  "url.events.list": "^/provas/.+",
+  "url.event.show": "^/prova/.+"
 }
