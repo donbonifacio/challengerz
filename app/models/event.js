@@ -2,6 +2,7 @@
 
   var database = require('../../lib/database.js');
   var EventSource = require('./eventSource.js');
+  var EventTag = require('./eventTag.js');
   var Event = exports;
   var collectionName = 'events';
 
@@ -41,6 +42,7 @@
         database.openCollection(collectionName, function(err, collection) {
           collection.save(model, function(err, result) {
             context.apiResult.event = model;
+            EventTag.saveAll(model.eventTags);
             next(context);
           });
         });

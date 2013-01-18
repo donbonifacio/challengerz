@@ -3,6 +3,8 @@
   var EventTag = exports;
   var database = require('../../lib/database.js');
   var collectionName = 'eventTags';
+  var slugifier = require('slugifier');
+  var _ = midgard._;
 
   EventTag.all = function all(context, next) {
     database.openCollection(collectionName, function(err, collection) {
@@ -12,6 +14,22 @@
       });
     });
 
+  };
+
+  EventTag.saveAll = function saveAll(tags) {
+    if(!tags || tags.length == 0 ) {
+      return 0;
+    }
+    database.openCollection(collectionName, function(err, collection) {
+      _.each(tags, function(tag) {
+        var slug = slugifier.toSlug(tag);
+        collection.findOne({slug:slug}, function(err, eventTag) {
+          if(!eventTag) {
+            collection.save({name: tag, slug: slug}, function(){});
+          }
+        });
+      });
+    });
   };
 
 })();
