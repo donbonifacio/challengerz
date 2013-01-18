@@ -9,7 +9,7 @@
   EventTag.all = function all(context, next) {
     database.openCollection(collectionName, function(err, collection) {
       collection.find().toArray(function(err, tags) {
-        context.apiResult = {success: true, eventTags: tags};
+        context.apiResult = {success: true, eventTags: _.pluck(tags, 'slug')};
         next(context);
       });
     });
