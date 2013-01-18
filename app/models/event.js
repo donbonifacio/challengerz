@@ -61,4 +61,27 @@
     });
   };
 
+  Event.setPageTitle = function setPageTitle(context, event) {
+    context.pageTitle = event.eventSource.name + ' » ' + event.edition + ' » ' + event.name;
+  };
+
+  Event.loadShowPageInfo = function loadShowPageInfo(context, next) {
+    database.openCollection(collectionName, function(err, collection) {
+      var query = {
+        slug: context.params.eventSlug, 
+        edition: context.params.eventEdition, 
+        eventSourceSlug: context.params.eventSourceSlug 
+      };
+      collection.findOne(query, function(err, event) {
+        if(event) {
+          context.params.event = event;
+          Event.setPageTitle(context, event);
+          next(context);
+        } else {
+          console.log({query: query, error: err});
+        }
+      });
+    });
+  };
+
 })();
