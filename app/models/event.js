@@ -26,8 +26,16 @@
         } else {
           obj.eventSource = eventSource;
         }
-        
-        callback(errors.length == 0, errors);
+        if(!obj._id) {
+          Event.getEvent(obj, function(err, event) {
+            if(event) {
+              errors.push('EventAlreadyExists');
+            }
+            callback(errors.length == 0, errors);
+          });
+        } else {
+          callback(errors.length == 0, errors);
+        }
       });
     } else {
       callback(errors.length == 0, errors);
@@ -71,21 +79,30 @@
   };
 
   Event.loadShowPageInfo = function loadShowPageInfo(context, next) {
+    var query = {
+      slug: context.params.eventSlug, 
+      edition: context.params.eventEdition, 
+      eventSourceSlug: context.params.eventSourceSlug 
+    };
+    Event.getEvent(query, function(err, event) {
+      if(event) {
+        context.params.event = event;
+        Event.setPageTitle(context, event);
+        next(context);
+      } else {
+        console.log({query: query, error: err});
+      }
+    });
+  };
+
+  Event.getEvent = function getEvent(params, callback) {
     database.openCollection(collectionName, function(err, collection) {
       var query = {
-        slug: context.params.eventSlug, 
-        edition: context.params.eventEdition, 
-        eventSourceSlug: context.params.eventSourceSlug 
+        slug: params.slug, 
+        edition: params.edition, 
+        eventSourceSlug: params.eventSourceSlug 
       };
-      collection.findOne(query, function(err, event) {
-        if(event) {
-          context.params.event = event;
-          Event.setPageTitle(context, event);
-          next(context);
-        } else {
-          console.log({query: query, error: err});
-        }
-      });
+      collection.findOne(query, callback);
     });
   };
 
