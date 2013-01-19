@@ -4,6 +4,9 @@
   "mainTitle": "Challengerz » Challenge yourself!",
   "Home": "Home",
   "event": "event",
+  "eventTag": "activity",
+
+  "RoadBike": "Road Bike",
 
   "url.events.list": "^/events/.+",
   "url.event.show": "^/event/(.+)/(.+)/(.+)/"

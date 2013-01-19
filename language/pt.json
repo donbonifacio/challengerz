@@ -4,6 +4,9 @@
   "mainTitle": "Challengerz » Desafia os teus limites!",
   "Home": "Início",
   "event": "prova",
+  "eventTag": "actividade",
+
+  "RoadBike": "Bicicleta de Estrada",
 
   "url.events.list": "^/provas/.+",
   "url.event.show": "^/prova/(.+)/(.+)/(.+)/"

@@ -1,5 +1,10 @@
 <ul>
 <% _.each(context.fetchLatest, function(e) { %>
-  <li><a href='<%= context.eventUrl(e) %>'><%= e.name %></a></li>
+  <li>
+    <a href='<%= context.eventUrl(e) %>'><%= e.name %></a>
+    <% _.each(e.eventTags, function(tag) { %>
+      <%= context.eventTagLink(tag) %>
+    <% }); %>
+  </li>
 <% }) %>
 </ul>
