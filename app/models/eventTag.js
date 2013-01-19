@@ -25,7 +25,7 @@
         var slug = slugifier.toSlug(tag);
         collection.findOne({slug:slug}, function(err, eventTag) {
           if(!eventTag) {
-            collection.save({name: tag, slug: slug}, function(){});
+            collection.save({name: tag, slug: slug, createdAt: Date.now()}, function(){});
           }
         });
       });

@@ -3,6 +3,7 @@
   var database = require('../../lib/database.js');
   var EventSource = require('./eventSource.js');
   var EventTag = require('./eventTag.js');
+  var Location = require('./location.js');
   var Event = exports;
   var collectionName = 'events';
 
@@ -25,6 +26,7 @@
         } else {
           obj.eventSource = eventSource;
         }
+        
         callback(errors.length == 0, errors);
       });
     } else {
@@ -43,6 +45,7 @@
           collection.save(model, function(err, result) {
             context.apiResult.event = model;
             EventTag.saveAll(model.eventTags);
+            Location.saveFromEvent(model);
             next(context);
           });
         });
