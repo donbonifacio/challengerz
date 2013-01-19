@@ -7,6 +7,8 @@
   "event": "event",
   "events": "events",
   "country": "country",
+  "region": "region",
+  "city": "city",
   "eventTag": "activity",
 
   "RoadBike": "Road Bike",

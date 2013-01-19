@@ -6,7 +6,9 @@
   "Home": "Início",
   "event": "prova",
   "events": "provas",
-  "country": "pais",
+  "country": "país",
+  "region": "região",
+  "city": "cidade",
   "eventTag": "actividade",
 
   "RoadBike": "Bicicleta de Estrada",
