@@ -18,6 +18,7 @@
     midgard.route('/api/create-event', 'api#createEvent');
     midgard.route('/api/list-event-tags', 'api#listEventTags');
 
+    localizedRoute(midgard, 'url.index', 'home#languageIndex');
     localizedRoute(midgard, 'url.events.list', 'events#list');
     localizedRoute(midgard, 'url.event.show', 'event#show');
 

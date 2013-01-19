@@ -2,12 +2,18 @@
   "language": "en",
 
   "mainTitle": "Challengerz » Challenge yourself!",
+  "intro": "Challengerz is a webapp that tracks and lists sports events.",
   "Home": "Home",
   "event": "event",
+  "events": "events",
+  "country": "country",
   "eventTag": "activity",
 
   "RoadBike": "Road Bike",
 
+  "events.Portugal": "View events in Portugal",
+
+  "url.index": "^/en/$",
   "url.events.list": "^/events/.+",
   "url.event.show": "^/event/(.+)/(.+)/(.+)/"
 }

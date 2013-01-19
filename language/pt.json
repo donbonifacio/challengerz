@@ -2,12 +2,18 @@
   "language": "pt",
 
   "mainTitle": "Challengerz » Desafia os teus limites!",
+  "intro": "O Challengerz é um site que agrega eventos desportivos de várias modalidades.",
   "Home": "Início",
   "event": "prova",
+  "events": "provas",
+  "country": "pais",
   "eventTag": "actividade",
 
   "RoadBike": "Bicicleta de Estrada",
 
+  "events.Portugal": "Ver provas em Portugal",
+
+  "url.index": "^/pt/$",
   "url.events.list": "^/provas/.+",
   "url.event.show": "^/prova/(.+)/(.+)/(.+)/"
 }
