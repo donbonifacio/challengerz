@@ -2,9 +2,11 @@
 <% _.each(context.fetchLatest, function(e) { %>
   <li>
     <a href='<%= context.eventUrl(e) %>'><%= e.name %></a>
+    <br/>
     <%= context.countryLink(e.country) %>
     <%= context.regionLink(e.region) %>
     <%= context.cityLink(e.city) %>
+    <br/>
     <% _.each(e.eventTags, function(tag) { %>
       <%= context.eventTagLink(tag) %>
     <% }); %>
