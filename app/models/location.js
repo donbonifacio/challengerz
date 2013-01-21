@@ -24,4 +24,15 @@
     });
   };
 
+  Location.locationsPanel = function locationsPanel(context, next) {
+    database.openCollection(collectionName, function(err, collection) {
+      collection.find().toArray(function(err, locations) {
+        context.locationsPanel = _.map(locations, function(loc) {
+          return loc.city;
+        });
+        next(context);
+      });
+    });
+  };
+
 })();

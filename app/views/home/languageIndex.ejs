@@ -4,3 +4,14 @@
   <p><a class="btn btn-primary btn-custom btn-large" href="<%= context.countryUrl('Portugal') %>">
     <%= context.translate('events.Portugal') %> &raquo;</a></p>
 </div>
+
+<div span="row">
+  <div class="span6">
+    <h2><%= context.translate('Locations') %></h2>
+    <%= context.partial('panel#locations') %>
+  </div>
+  <div class="span6">
+    <h2><%= context.translate('EventTags') %></h2>
+    <%= context.partial('panel#eventTags') %>
+  </div>
+</div>

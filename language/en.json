@@ -10,6 +10,8 @@
   "region": "region",
   "city": "city",
   "eventTag": "activity",
+  "EventTags": "Activities",
+  "Locations": "Locations",
 
   "RoadBike": "Road Bike",
 

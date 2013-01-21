@@ -8,6 +8,8 @@
   };
 
   exports.languageIndex = function languageIndex(context) {
+    context.include('panel#locations');
+    context.include('panel#eventTags');
     context.render();
   };
 

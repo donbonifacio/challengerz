@@ -32,4 +32,14 @@
     });
   };
 
+  EventTag.tagsPanel = function tagsPanel(context, next) {
+    database.openCollection(collectionName, function(err, collection) {
+      collection.find().toArray(function(err, tags) {
+        context.tagsPanel = tags;
+        context.tagsPanel.sort();
+        next(context);
+      });
+    });
+  };
+
 })();
