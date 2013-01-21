@@ -2,7 +2,9 @@
 
   exports.main = function main(context) {
     context.include('layout#topMenu');
-    context.include('midgard#trace');
+    if(midgard.isDevelopment) {
+      context.include('midgard#trace');
+    }
     context.render();
   };
 

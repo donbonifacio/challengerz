@@ -27,9 +27,7 @@
     </footer>
   </div>
 
-  <% if( context.midgard.isDevelopment ) { %>
-    <%= context.partial('midgard#trace') %>
-  <% } %>
+  <%= context.partial('midgard#trace') %>
 
   <script src="///ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="<%= context.staticRoot %>js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
