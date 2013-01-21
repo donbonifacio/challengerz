@@ -15,6 +15,9 @@
     midgard.validator.string(errors, obj, 'name');
     midgard.validator.string(errors, obj, 'eventSourceSlug');
     midgard.validator.integer(errors, obj, 'edition');
+    obj.countrySlug = slugifier.toSlug(obj.country);
+    obj.regionSlug = slugifier.toSlug(obj.region);
+    obj.citySlug = slugifier.toSlug(obj.city);
     if(obj._id) {
       obj.updatedAt = Date.now();
     } else {
@@ -66,9 +69,18 @@
     });
   };
 
+  var mongoQuery = function mongoQuery(params) {
+    var filter = {};
+    var tag = params['eventTag'];
+    if(tag) {
+      filter.eventTags = { $in: [tag] };
+    }
+    return filter;
+  };
+
   Event.fetchLatest = function fetchLatest(context, next) {
     database.openCollection(collectionName, function(err, collection) {
-      collection.find().limit(10).sort({createdAt:0}).toArray(function(err, list) {
+      collection.find(mongoQuery(context.params.eventsFilter)).limit(10).sort({createdAt:0}).toArray(function(err, list) {
         context.fetchLatest = list;
         next(context);
       });

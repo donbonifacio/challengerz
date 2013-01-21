@@ -10,7 +10,8 @@
     parts.shift();
     while(parts.length > 0 ) {
       var key = context.translate('filter.'+parts.shift());
-      var value = context.translate('filter.'+parts.shift());
+      var search = parts.shift();
+      var value = context.translate('filter.'+search, search);
       filter[key] = value;
     }
     return filter;
