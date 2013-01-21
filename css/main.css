@@ -10,6 +10,12 @@ div.mainPanel {
   min-height: 780px;
 }
 
+footer {
+  margin-top:10px;
+  background-color: #FFF;
+  padding:10px;
+}
+
 .btn-custom {
   background-color: hsl(110, 56%, 16%) !important;
   background-repeat: repeat-x;
