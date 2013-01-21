@@ -13,7 +13,11 @@
   "EventTags": "Activities",
   "Locations": "Locations",
 
-  "RoadBike": "Road Bike",
+  "filter.activity": "eventTag",
+  "filter.country": "countrySlug",
+
+  "tag.road-bike": "Road Bike",
+  "tag.brm": "BRM",
 
   "events.Portugal": "View events in Portugal",
 

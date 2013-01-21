@@ -4,6 +4,7 @@
   var EventSource = require('./eventSource.js');
   var EventTag = require('./eventTag.js');
   var Location = require('./location.js');
+  var slugifier = require('slugifier');
   var Event = exports;
   var collectionName = 'events';
 

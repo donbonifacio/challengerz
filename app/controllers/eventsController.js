@@ -9,7 +9,9 @@
     var parts = midgard._.compact(url.split('/'));
     parts.shift();
     while(parts.length > 0 ) {
-      filter[parts.shift()] = parts.shift();
+      var key = context.translate('filter.'+parts.shift());
+      var value = context.translate('filter.'+parts.shift());
+      filter[key] = value;
     }
     return filter;
   };

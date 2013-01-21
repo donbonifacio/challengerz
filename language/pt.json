@@ -13,7 +13,11 @@
   "EventTags": "Actividades",
   "Locations": "Localizaçoes",
 
-  "RoadBike": "Bicicleta de Estrada",
+  "filter.actividade": "eventTag",
+  "filter.pais": "countrySlug",
+
+  "tag.road-bike": "Bicicleta de Estrada",
+  "tag.brm": "BRM",
 
   "events.Portugal": "Ver provas em Portugal",
 
