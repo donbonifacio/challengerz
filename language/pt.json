@@ -13,6 +13,8 @@
   "EventTags": "Actividades",
   "Locations": "Localizaçoes",
 
+  "filter.location": "local",
+  "filter.local": "location",
   "filter.actividade": "eventTag",
   "filter.pais": "countrySlug",
 

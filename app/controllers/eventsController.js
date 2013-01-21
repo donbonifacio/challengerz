@@ -12,6 +12,9 @@
       var key = context.translate('filter.'+parts.shift());
       var search = parts.shift();
       var value = context.translate('filter.'+search, search);
+      if(value.match(/\+/)) {
+        value = value.split('+');
+      }
       filter[key] = value;
     }
     return filter;

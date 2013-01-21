@@ -3,9 +3,9 @@
   <li>
     <a href='<%= context.eventUrl(e) %>'><%= e.name %></a>
     <br/>
-    <%= context.countryLink(e.country) %>
-    <%= context.regionLink(e.region) %>
-    <%= context.cityLink(e.city) %>
+    <%= context.locationLink(e, 'country') %>
+    <%= context.locationLink(e, 'region') %>
+    <%= context.locationLink(e) %>
     <br/>
     <% _.each(e.eventTags, function(tag) { %>
       <%= context.eventTagLink(tag) %>

@@ -75,6 +75,19 @@
     if(tag) {
       filter.eventTags = { $in: [tag] };
     }
+    var location = params['location'];
+    if(typeof(location) === 'string') {
+      location = [location];
+    }
+    if(location ) {
+      filter.countrySlug = location[0];
+      if(location[1]) {
+        filter.regionSlug = location[1];
+      }
+      if(location[2]) {
+        filter.citySlug = location[2];
+      }
+    }
     return filter;
   };
 
