@@ -1,1 +1,14 @@
-<%= context.partial('events#latestEvents') %>
+<div class="hero-unit" style='padding:30px'>
+  <h2><%= context.translate('eventsTitle') %></h2>
+  <p><%= context.partial('panel#eventsFilterToBadges') %></p>
+</div>
+
+<div class='row'>
+  <div class='span6'>
+    <%= context.partial('events#latestEvents') %>
+  </div>
+  <div class='span6'>
+    <h2><%= context.translate('EventTags') %></h2>
+    <%= context.partial('panel#eventTags') %>
+  </div>
+</div>

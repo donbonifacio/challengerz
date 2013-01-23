@@ -1,0 +1,12 @@
+<% _.each(context.eventsFilterToBadges.eventTags, function(tag) { %>
+  <%= context.eventTagLink(tag) %>
+<% }); %>
+<% if(context.eventsFilterToBadges.country) { %>
+  <%= context.locationLink(context.eventsFilterToBadges.event, 'country') %>
+<% } %>
+<% if(context.eventsFilterToBadges.region) { %>
+  <%= context.locationLink(context.eventsFilterToBadges.event, 'region') %>
+<% } %>
+<% if(context.eventsFilterToBadges.city) { %>
+  <%= context.locationLink(context.eventsFilterToBadges.event) %>
+<% } %>

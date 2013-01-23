@@ -46,6 +46,8 @@
   exports.list = function(context) {
     context.params.eventsFilter = resolveRequestFilter(context);
     context.include('events#latestEvents');
+    context.include('panel#eventTags');
+    context.include('panel#eventsFilterToBadges');
     context.render();
   };
 
