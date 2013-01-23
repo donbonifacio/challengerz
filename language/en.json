@@ -2,6 +2,7 @@
   "language": "en",
 
   "mainTitle": "Challengerz » Challenge yourself!",
+  "eventsTitle": "Sport Events",
   "intro": "Challengerz is a webapp that tracks and lists sport events.",
   "Home": "Home",
   "event": "event",
