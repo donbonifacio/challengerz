@@ -36,3 +36,8 @@ footer {
 div.span6 {
   width:544px;
 }
+
+ul.events li {
+  margin-bottom:20px;
+
+}
