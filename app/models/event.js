@@ -88,12 +88,14 @@
         filter.citySlug = location[2];
       }
     }
+    filter.date = {$gte: Date.now()};
+    console.log(filter);
     return filter;
   };
 
   Event.fetchLatest = function fetchLatest(context, next) {
     database.openCollection(collectionName, function(err, collection) {
-      collection.find(mongoQuery(context.params.eventsFilter)).limit(10).sort({createdAt:0}).toArray(function(err, list) {
+      collection.find(mongoQuery(context.params.eventsFilter)).limit(50).sort({date:1}).toArray(function(err, list) {
         context.fetchLatest = list;
         next(context);
       });
