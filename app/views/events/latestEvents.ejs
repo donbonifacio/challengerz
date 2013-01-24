@@ -2,7 +2,7 @@
   <% _.each(context.fetchLatest, function(e) { %>
     <tr>
       <td class='event'>
-        <a href='<%= context.eventUrl(e) %>'><%= e.name %></a>
+        <a target='__blank' href='<%= context.eventUrl(e) %>'><%= e.name %></a>
         <br/>
         <%= context.locationLink(e, 'country') %>
         <%= context.locationLink(e, 'region') %>
