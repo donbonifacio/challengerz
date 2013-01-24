@@ -22,7 +22,7 @@
   };
 
   exports.setPageTitle = function setPageTitle(context, next) {
-    var title = context.translate('eventsTitle');
+    var title = context.translate('eventsTitle') + ' ' + new Date().getFullYear();
     if(context.params.eventsFilter.eventTag) {
       title += " » " + context.translate('tag.'+context.params.eventsFilter.eventTag);
     }
