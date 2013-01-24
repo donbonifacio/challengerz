@@ -24,6 +24,19 @@
 
   "events.Portugal": "View events in Portugal",
 
+  "shortMonth0": "Jan",
+  "shortMonth1": "Feb",
+  "shortMonth2": "Mar",
+  "shortMonth3": "Apr",
+  "shortMonth4": "May",
+  "shortMonth5": "Jun",
+  "shortMonth6": "Jul",
+  "shortMonth7": "Ago",
+  "shortMonth8": "Sep",
+  "shortMonth9": "Oct",
+  "shortMonth10": "Nov",
+  "shortMonth11": "Dec",
+
   "url.index": "^/en/$",
   "url.events.list": "^/events/.+",
   "url.event.show": "^/event/(.+)/(.+)/(.+)/"

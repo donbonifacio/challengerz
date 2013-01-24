@@ -25,6 +25,19 @@
 
   "events.Portugal": "Ver provas em Portugal",
 
+  "shortMonth0": "Jan",
+  "shortMonth1": "Fev",
+  "shortMonth2": "Mar",
+  "shortMonth3": "Abr",
+  "shortMonth4": "Mai",
+  "shortMonth5": "Jun",
+  "shortMonth6": "Jul",
+  "shortMonth7": "Ago",
+  "shortMonth8": "Set",
+  "shortMonth9": "Out",
+  "shortMonth10": "Nov",
+  "shortMonth11": "Dez",
+
   "url.index": "^/pt/$",
   "url.events.list": "^/provas/.+",
   "url.event.show": "^/prova/(.+)/(.+)/(.+)/"

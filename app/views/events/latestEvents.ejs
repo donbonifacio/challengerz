@@ -1,15 +1,23 @@
-<ul class="unstyled events">
-<% _.each(context.fetchLatest, function(e) { %>
-  <li>
-    <a href='<%= context.eventUrl(e) %>'><%= e.name %></a>
-    <br/>
-    <%= context.locationLink(e, 'country') %>
-    <%= context.locationLink(e, 'region') %>
-    <%= context.locationLink(e) %>
-    <br/>
-    <% _.each(e.eventTags, function(tag) { %>
-      <%= context.eventTagLink(tag) %>
-    <% }); %>
-  </li>
-<% }) %>
-</ul>
+<table class="events">
+  <% _.each(context.fetchLatest, function(e) { %>
+    <tr>
+      <td class='event'>
+        <a href='<%= context.eventUrl(e) %>'><%= e.name %></a>
+        <br/>
+        <%= context.locationLink(e, 'country') %>
+        <%= context.locationLink(e, 'region') %>
+        <%= context.locationLink(e) %>
+        <br/>
+        <% _.each(e.eventTags, function(tag) { %>
+          <%= context.eventTagLink(tag) %>
+        <% }); %>
+      </td>
+      <td class='distance'>
+        <%= e.distance %><br/>KM
+      </td>
+      <td class='date'>
+        <%= context.getDate(e.date) %>
+      </td>
+    </tr>
+  <% }) %>
+</table>

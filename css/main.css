@@ -37,7 +37,19 @@ div.span6 {
   width:544px;
 }
 
-ul.events li {
-  margin-bottom:20px;
+table.events {
+  background-color:#FFF;
+  width:100%;
+}
 
+table.events tr td {
+  background-color: #EEE;
+  padding:10px;
+  border-width:1px;
+  border-color: #FFF;
+  border-style: solid;
+}
+
+table.events tr td.date, table.events tr td.distance {
+  text-align:center;
 }
